@@ -240,7 +240,7 @@ DEPENDENCIES
   capybara-webkit (~> 1.5.0)
   coffee-rails (~> 4.1.0)
   devise (~> 3.4.1)
-  faker
+  faker (~> 1.4.3)
   figaro (~> 1.1.0)
   foreman (~> 0.78.0)
   jbuilder (~> 2.0)
