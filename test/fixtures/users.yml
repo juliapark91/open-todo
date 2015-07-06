@@ -1,0 +1,11 @@
+# one:
+#   id: 1,
+#   email: email@fake.com,
+#   password: password,
+#   full_name: John Smith
+
+# two:
+#   id: 2,
+#   email: fake@email.com,
+#   password: password2,
+#   full_name: Sally Smith
