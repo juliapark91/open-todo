@@ -4,6 +4,8 @@ ruby                            '2.2.2'
 
 gem 'rails',                    '4.2.2'
 
+gem 'active_model_serializers', '~> 0.9.3'
+
 gem 'bootstrap-sass',           '~> 3.3.4.1'
 
 gem 'coffee-rails',             '~> 4.1.0'
@@ -52,6 +54,6 @@ group :development, :test do
   gem 'rails-footnotes',        '>= 4.1.6', '<5'
   gem 'selenium-webdriver',     '~> 2.45.0'
   gem 'simplecov',              '~> 0.9.2', :require => false
-  gem 'spring',                 '~> 1.3.4'
+  gem 'spring',                 '~> 1.3.6'
   gem 'web-console',            '~> 2.0'
 end
