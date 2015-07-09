@@ -85,6 +85,34 @@ module API
       assert_equal( { failure: "invalid e-mail or password" }, response_message )
     end
     
+    #
+    # WIP:  This test does not take into account that you'll need both email and password
+    #       attributes.  Thus, this is left as an exercise for you.  Remove this comment 
+    #       when the required functionality has been included within the test.
+    #
+        
+    test "GET /users should retrieve all users" do
+      user_emails = %w[ user1@example.com user2@example.com ]
+      
+      user_emails.each do | user_email |  
+        post '/api/users', 
+          { user: 
+            { email: user_email, password: 'password' }
+          }.to_json,
+          { 'Accept': Mime::JSON, 'Content-Type': Mime::JSON.to_s }
+        
+        assert_equal 201, response.status
+        assert_equal Mime::JSON, response.content_type
+      end
+      
+      get '/api/users'
+
+      assert_equal 200, response.status
+      assert_equal Mime::JSON, response.content_type
+      
+      assert_equal user_emails, assigns(:users).map(&:email)
+    end
+    
   end
 
 end
