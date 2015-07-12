@@ -1,11 +1,19 @@
-# one:
-#   id: 1,
-#   email: email@fake.com,
-#   password: password,
-#   full_name: John Smith
-
-# two:
-#   id: 2,
-#   email: fake@email.com,
-#   password: password2,
-#   full_name: Sally Smith
+valid_username_valid_password:
+  id: 1,
+  username: someone@example.com
+  password: 'password'
+  
+invalid_username_valid_password:
+  id: 3,
+  username: ''
+  password: 'password'
+  
+valid_username_invalid_password:
+  id: 4,
+  username: ''
+  password: 'password'
+  
+invalid_username_invalid_password:
+  id: 5,
+  username: ''
+  password: '' 
