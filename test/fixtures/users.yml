@@ -1,19 +1,19 @@
 valid_username_valid_password:
   id: 1,
   username: someone@example.com
-  password: 'password'
+  password: password
   
 invalid_username_valid_password:
   id: 3,
-  username: ''
-  password: 'password'
+  username:
+  password: password
   
 valid_username_invalid_password:
   id: 4,
-  username: ''
-  password: 'password'
+  username: someone@example.com
+  password:
   
 invalid_username_invalid_password:
   id: 5,
-  username: ''
-  password: '' 
+  username:
+  password:
