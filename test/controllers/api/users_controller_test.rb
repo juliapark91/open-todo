@@ -53,7 +53,7 @@ module API
       assert_equal Mime::JSON, response.content_type
       
       response_message = json( response.body )
-      assert_equal( { failure: "invalid e-mail or password" }, response_message )
+      assert_equal( { failure: "invalid username or password" }, response_message )
     end
     
     #
@@ -73,7 +73,7 @@ module API
       assert_equal Mime::JSON, response.content_type
       
       response_message = json( response.body )
-      assert_equal( { failure: "invalid e-mail or password" }, response_message )
+      assert_equal( { failure: "invalid username or password" }, response_message )
     end
     
     #
@@ -93,7 +93,7 @@ module API
       assert_equal Mime::JSON, response.content_type
       
       response_message = json( response.body )
-      assert_equal( { failure: "invalid e-mail or password" }, response_message )
+      assert_equal( { failure: "invalid username or password" }, response_message )
     end
     
     #
