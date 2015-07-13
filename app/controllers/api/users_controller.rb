@@ -19,6 +19,16 @@ module API
         render json: { failure: "invalid username or password" }, status: :unprocessable_entity
       end
     end
+
+    def destroy
+      begin
+        user = User.find(params[:id])
+        user.destroy
+        render json: {}, status: :no_content
+      rescue ActiveRecord::RecordNotFound
+        render :json => {}, :status => :not_found
+      end
+    end
     
   private 
   
