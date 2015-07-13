@@ -16,7 +16,7 @@ module API
       if @user.save
         render json: { success: "user sucessfully created" }, status: :created
       else
-        render json: { failure: "invalid e-mail or password" }, status: :unprocessable_entity
+        render json: { failure: "invalid username or password" }, status: :unprocessable_entity
       end
     end
     
