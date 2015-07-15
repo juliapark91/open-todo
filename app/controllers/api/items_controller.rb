@@ -3,9 +3,9 @@ module API
   class ItemsController < APIController
     
     before_action :authenticated?
+    before_action :set_list
   
     def create 
-      @list = List.find(params[:list_id])
       @item = @list.items.new( item_params )
       
       if @item.save
@@ -16,7 +16,6 @@ module API
     end
 
     def update
-      @list = List.find(params[:list_id])
       @item = @list.items.find(params[:id])
       if @item.update( item_params )
         render json: { success: "Item update completed" }, status: :updated
@@ -24,11 +23,25 @@ module API
         render json: { errors: @item.errors.full_messages }, status: :unprocessable_entity
       end
     end
+
+    def destroy
+      begin
+        @item = @list.items.find(params[:id])
+        @item.destroy
+        render json: { success: "item deleted successfully" }, status: :deleted
+      rescue ActiveRecord::RecordNotFound
+        render :json => { failure: "item failed to delete or does not exist"}, :status => :not_found
+      end
+    end
     
   private 
   
     def item_params
       params.require( :item ).permit( :name )
+    end
+
+    def set_list
+      @list = List.find(params[:list_id])
     end
 
   end
