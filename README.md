@@ -79,6 +79,7 @@ $ rails s
   $ curl -X PUT -u julia@example.com:123456 -d "list[permissions]=private" http://localhost:3000/api/users/1/lists/1
   Item Name Update:
   $ curl -X PUT -u julia@example.com:123456 -d "item[name]=Leave your friends behind" http://localhost:3000/api/lists/1/items/1
+  ```
 
 ## Support
 
