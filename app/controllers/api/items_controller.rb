@@ -4,7 +4,12 @@ module API
     
     before_action :authenticated?
     before_action :set_list
-  
+    
+    def index
+      @items = @list.items
+      render json: @items
+    end
+
     def create 
       @item = @list.items.new( item_params )
       
