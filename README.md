@@ -59,27 +59,65 @@ $ rails s
   $ git push heroku master
   $ heroku run rake db:migrate
   ```
-## Creating, deleting, updating with Curl
-  ```
-  User Creation:
-  $ curl -u julia@example.com:123456 -d "user[username]=Sterling" -d "user[password]=Archer" http://localhost:3000/api/users/
-  List Creation:
-  $ curl -u julia@example.com:123456 -d "list[name]=Things to do today" -d "list[permissions]=private" http://localhost:3000/api/users/1/lists
-  Item Creation:
-  $ curl -u julia@example.com:123456 -d "item[name]=Dance if you want to" http://localhost:3000/api/lists/1/items
+## Using the Open ToDo API via Curl
 
-  User Deletion:
-  $ curl -u julia@example.com:123456 -X DELETE http://localhost:3000/api/users/1/
-  List Deletion:
-  $ curl -u julia@example.com:123456 -X DELETE http://localhost:3000/api/users/1/lists/1
-  Item Deletion:
-  $ curl -u julia@example.com:123456 -X DELETE http://localhost:3000/api/lists/1/items/1
+  #### User Creation
 
-  Topic Permissions Update:
-  $ curl -X PUT -u julia@example.com:123456 -d "list[permissions]=private" http://localhost:3000/api/users/1/lists/1
-  Item Name Update:
-  $ curl -X PUT -u julia@example.com:123456 -d "item[name]=Leave your friends behind" http://localhost:3000/api/lists/1/items/1
   ```
+  $ curl -u username:password -d "user[username]=Sterling" -d "user[password]=Archer" http://localhost:3000/api/users/
+  ```
+
+  #### List Creation
+
+  ```
+  $ curl -u username:password -d "list[name]=Things to do today" -d "list[permissions]=private" http://localhost:3000/api/users/1/lists
+  ```
+
+  #### Item Creation
+
+  ```
+  $ curl -u username:password -d "item[name]=Dance if you want to" http://localhost:3000/api/lists/1/items
+  ```
+
+  #### List Items
+
+  ```
+  $ curl -u username:password -d -X GET http://localhost:3000/api/lists/1/items
+  ```
+
+  #### User Deletion
+
+  ```
+  $ curl -u username:password -X DELETE http://localhost:3000/api/users/1/
+  ```
+
+  #### List Deletion
+
+  ```
+  $ curl -u username:password -X DELETE http://localhost:3000/api/users/1/lists/1
+  ```
+
+  #### Item Deletion
+
+  ```
+  $ curl -u username:password -X DELETE http://localhost:3000/api/lists/1/items/1
+  ```
+
+
+  #### Topic Permissions Update
+
+  ```
+  $ curl -X PUT -u username:password -d "list[permissions]=private" http://localhost:3000/api/users/1/lists/1
+  ```
+
+  #### Item Name Update
+
+  ```
+  $ curl -X PUT -u username:password -d "item[name]=Leave your friends behind" http://localhost:3000/api/lists/1/items/1
+  ```
+
+  Note:  Substitute the appropriate values for **username** and **password** when executing the above **Curl** in the terminal.
+
 
 ## Support
 
