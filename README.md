@@ -82,7 +82,7 @@ $ rails s
 ##### Item List
 
   ```
-  $ curl -u username:password -d -X GET http://localhost:3000/api/lists/1/items
+  $ curl -u username:password http://localhost:3000/api/lists/1/items
   ```
 
 ##### User Deletion
